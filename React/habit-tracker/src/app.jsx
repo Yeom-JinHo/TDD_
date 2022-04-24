@@ -44,14 +44,15 @@ const App = ({ presenter }) => {
   }, []);
 
   const handleReset = useCallback(() => {
-    setHabits((habits) =>
-      habits.map((habit) => {
-        if (habit.count !== 0) {
-          return { ...habit, count: 0 };
-        }
-        return habit;
-      })
-    );
+    // setHabits((habits) =>
+    //   habits.map((habit) => {
+    //     if (habit.count !== 0) {
+    //       return { ...habit, count: 0 };
+    //     }
+    //     return habit;
+    //   })
+    // );
+    presenter.reset(setHabits);
   }, []);
 
   return (
